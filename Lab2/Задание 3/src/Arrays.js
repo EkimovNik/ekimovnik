@@ -5,10 +5,11 @@
 */
 export function arraySorting(data) {
 
-  const arr = data.split(',');
-  const nums = arr.map(Number);
-  nums.sort((a,b) => a - b);
-  return nums.join(',');
+ return data
+    .split(',')
+    .map(Number)
+    .sort((a, b) => a - b)
+    .join(',');
 
 }
 
@@ -27,10 +28,6 @@ export function arrayFiltering(data) {
   значения из первых двух массивов, и верните его в качестве результата функции.
 */
 export function arrayPushing(array1, array2) {
-  const result = [];
-  for(let i = 0;i<array1.length;++i){
-    result.push(array1[i]);
-    result.push(array2[i]);
-  }
-  return result;
+  return array1.reduce((acc, item, index) => [...acc, item, array2[index]], []);
+
 }
