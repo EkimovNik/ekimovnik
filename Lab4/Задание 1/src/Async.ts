@@ -15,8 +15,7 @@ export function mock(ms: number): Promise<number> {
 Перепишите функцию getData так, чтобы она выполнялась быстрее.
  */
 export async function getData(): Promise<number[]> {
-    const [data1, data2, data3] = await Promise.all([mock(100),mock(200),mock(300)]);
-    return [data1, data2, data3];
+    return Promise.all([mock(100), mock(200), mock(300)]);
 }
 
 /*
